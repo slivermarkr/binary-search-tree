@@ -178,4 +178,16 @@ export default class Tree {
     }
     return true;
   }
+
+  rebalance(root = this.getRoot()) {
+    const newArray = [];
+    function recurse(r) {
+      if (r === null) return r;
+      if (r.left) recurse(r.left);
+      newArray.push(r.data);
+      if (r.right) recurse(r.right);
+    }
+    recurse(root);
+    this.root = this.buildTree(newArray);
+  }
 }
