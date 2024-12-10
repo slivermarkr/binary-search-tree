@@ -150,32 +150,23 @@ export default class Tree {
     return recurse(root);
   }
 
-  depth(node, root = this.getRoot()) {
+  depth(node, root = this.getRoot(), depthLvl = 0) {
     if (node === null) return -1;
-    let count = 0;
+    if (node.data === root.data) return depthLvl;
 
-    function recurse(node, r) {
-      if (r === null) return;
-      if (r.data === node.data) return count;
-      if (r.data < node.data) {
-        return 1 + recurse(node, r.right);
-      }
-      if (r.data > node.data) {
-        return 1 + recurse(node, r.left);
-      }
+    if (node.data < root.data) {
+      return this.depth(node, root.left, depthLvl + 1);
+    } else {
+      return this.depth(node, root.right, depthLvl + 1);
     }
-
-    count = recurse(node, root);
-    return count;
   }
 
   isBalanced(root = this.getRoot()) {
     const leftLen = this.height(root.left);
     const rightLen = this.height(root.right);
-    if (Math.max(rightLen, leftLen) - Math.min(rightLen, leftLen) > 1) {
-      return false;
-    }
-    return true;
+    return Math.max(rightLen, leftLen) - Math.min(rightLen, leftLen) > 1
+      ? false
+      : true;
   }
 
   rebalance(root = this.getRoot()) {

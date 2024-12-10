@@ -1,6 +1,6 @@
 # binary-search-tree
 
-project link: https://www.theodinproject.com/lessons/javascript-binary-search-trees
+project link: https://github.com/slivermarkr/binary-search-tree/blob/main/classes/tree.js
 
 ## test #1: Create a binary search tree from an array of random numbers < 100. You can create a function that returns an array of random numbers every time you call it if you wish.
 

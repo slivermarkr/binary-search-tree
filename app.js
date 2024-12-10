@@ -4,17 +4,13 @@ import prettyPrint from "./components/prettyprint.js";
 import { justPrint, powTwo, doubled } from "./components/callbacks.js";
 const sample = [1, 3, 5, 8, 12, 16, 23, 47];
 
-const arr = randomSortedArray(69); //creates a sortedarray
-const tree = new Tree(sample); //convert sorted array to BST.
+const arr = randomSortedArray(100); //creates a sortedarray
+const tree = new Tree(arr); //convert sorted array to BST.
 
 tree.root = tree.buildTree();
-tree.insert(120);
-tree.insert(121);
-tree.insert(122);
-tree.insert(123);
 prettyPrint(tree.root);
-tree.rebalance();
-prettyPrint(tree.root);
+const node = tree.find(99);
+console.log(tree.depth(node));
 // TESTING:
 // const level = tree.levelOrder(justPrint)(tree.root).join("->");
 // console.log(level);
