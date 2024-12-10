@@ -7,5 +7,6 @@ const sample = [1, 3, 5, 8, 12, 16, 23, 47];
 
 const tree = new Tree(sample);
 tree.root = tree.buildTree(tree.arr);
-tree.insert(2);
+
+tree.deletion(3);
 prettyPrint(tree.root);

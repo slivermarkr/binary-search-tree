@@ -29,4 +29,30 @@ export default class Tree {
     }
     return root;
   }
+
+  getSuccessor(node) {
+    node = node.right;
+    if (node !== null && node.left !== null) {
+      node = node.left;
+    }
+    return node;
+  }
+
+  deletion(value, root = this.getRoot()) {
+    if (root === null) return root;
+
+    if (root.data > value) {
+      root.left = this.deletion(value, root.left);
+    } else if (root.data < value) {
+      root.right = this.deletion(value, root.right);
+    } else {
+      if (root.left === null) return root.right;
+      if (root.right === null) return root.left;
+
+      const succ = this.getSuccessor(root);
+      root.data = succ.data;
+      root.right = this.deletion(succ.data, root.right);
+    }
+    return root;
+  }
 }
