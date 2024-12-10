@@ -18,6 +18,38 @@ tree.root = tree.buildTree(tree.arr);
 
 // Depth First Search
 // Inorder Traversal
-const inTraverse = tree.inOrder(justPrint);
-console.log(inTraverse(tree.root).join("->"));
+// const inTraversePrt = tree.inOrder(justPrint);
+// const inTraverseDou = tree.inOrder(doubled);
+// const inTraversePow = tree.inOrder(powTwo);
+
+// console.log(inTraversePrt(tree.root).join("->"));
+// console.log("\n");
+// console.log(inTraverseDou(tree.root).join("->"));
+// console.log("\n");
+// console.log(inTraversePow(tree.root).join("->"));
+// console.log("\n");
+
+// preOrder Traversal
+// const preTraversePrt = tree.preOrder(justPrint);
+// const preTraverseDou = tree.preOrder(doubled);
+// const preTraversePow = tree.preOrder(powTwo);
+
+// console.log(preTraversePrt(tree.root).join("->"));
+// console.log("\n");
+// console.log(preTraverseDou(tree.root).join("->"));
+// console.log("\n");
+// console.log(preTraversePow(tree.root).join("->"));
+// console.log("\n");
+
+// preOrder Traversal
+const postTraversePrt = tree.postOrder(justPrint);
+const postTraverseDou = tree.postOrder(doubled);
+const postTraversePow = tree.postOrder(powTwo);
+
+console.log(postTraversePrt(tree.root).join("->"));
+console.log("\n");
+console.log(postTraverseDou(tree.root).join("->"));
+console.log("\n");
+console.log(postTraversePow(tree.root).join("->"));
+console.log("\n");
 prettyPrint(tree.root);

@@ -104,4 +104,38 @@ export default class Tree {
       return result;
     };
   }
+
+  preOrder(cb) {
+    if (!cb) throw new Error("Please pass in a callback fn().");
+    return (root) => {
+      const result = [];
+
+      function recurse(r) {
+        if (r === null) return r;
+        result.push(cb(r.data));
+        if (r.left) recurse(r.left);
+        if (r.right) recurse(r.right);
+      }
+
+      recurse(root);
+      return result;
+    };
+  }
+
+  postOrder(cb) {
+    if (!cb) throw new Error("Please pass in a callback fn().");
+    return (root) => {
+      const result = [];
+
+      function recurse(r) {
+        if (r === null) return r;
+        if (r.left) recurse(r.left);
+        if (r.right) recurse(r.right);
+        result.push(cb(r.data));
+      }
+
+      recurse(root);
+      return result;
+    };
+  }
 }
