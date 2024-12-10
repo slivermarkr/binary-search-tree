@@ -149,4 +149,24 @@ export default class Tree {
     }
     return recurse(root);
   }
+
+  depth(node, root = this.getRoot()) {
+    if (node === null) return -1;
+    let count = 0;
+
+    function recurse(node, r) {
+      if (r === null) return;
+      if (r.data === node.data) return count;
+      if (r.data < node.data) {
+        recurse(node, r.right);
+      }
+      if (r.data > node.data) {
+        recurse(node, r.left);
+      }
+      return count++;
+    }
+
+    recurse(node, root);
+    return count;
+  }
 }
