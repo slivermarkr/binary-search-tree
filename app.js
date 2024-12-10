@@ -11,9 +11,9 @@ tree.root = tree.buildTree();
 prettyPrint(tree.root);
 
 // Breadth First Search or levelOrder
-// const cbJustPrint = tree.postOrder(justPrint);
-// const cbDoubled = tree.postOrder(doubled);
-// const cbPowTwo = tree.postOrder(powTwo);
+// const cbJustPrint = tree.levelOrder(justPrint);
+// const cbDoubled = tree.levelOrder(doubled);
+// const cbPowTwo = tree.levelOrder(powTwo);
 // prettyPrint(tree.root);
 // console.log("\n");
 // console.log("callback: (x) => x");
@@ -51,7 +51,7 @@ prettyPrint(tree.root);
 // console.log(preTraversePow(tree.root).join("->"));
 // console.log("\n");
 
-// postOrder Traversal
+// levelOrder Traversal
 
 // const postTraversePrt = tree.postOrder(justPrint);
 // const postTraverseDou = tree.postOrder(doubled);
