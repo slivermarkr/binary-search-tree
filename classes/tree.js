@@ -169,4 +169,13 @@ export default class Tree {
     recurse(node, root);
     return count;
   }
+
+  isBalanced(root = this.getRoot()) {
+    const leftLen = this.height(root.left);
+    const rightLen = this.height(root.right);
+    if (Math.max(rightLen, leftLen) - Math.min(rightLen, leftLen) > 1) {
+      return false;
+    }
+    return true;
+  }
 }
