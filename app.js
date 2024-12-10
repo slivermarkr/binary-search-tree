@@ -6,7 +6,8 @@ const arr = randomSortedArray(10);
 const sample = [1, 3, 5, 8, 12, 16, 23, 47];
 
 const tree = new Tree(sample);
+
 tree.root = tree.buildTree(tree.arr);
 
-tree.deletion(3);
+// console.log(tree.find(8));
 prettyPrint(tree.root);

@@ -29,7 +29,7 @@ export default class Tree {
     }
     return root;
   }
-
+  // helper function for deleting node with two childen.
   getSuccessor(node) {
     node = node.right;
     if (node !== null && node.left !== null) {
@@ -54,5 +54,18 @@ export default class Tree {
       root.right = this.deletion(succ.data, root.right);
     }
     return root;
+  }
+
+  find(value, root = this.getRoot()) {
+    if (root === null) return root;
+
+    if (value === root.data) {
+      return root;
+    } else if (value < root.data) {
+      return this.find(value, root.left);
+    } else if (value > root.data) {
+      return this.find(value, root.right);
+    }
+    return null;
   }
 }
