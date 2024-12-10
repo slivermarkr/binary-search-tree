@@ -68,4 +68,40 @@ export default class Tree {
     }
     return null;
   }
+
+  levelOrder(cb) {
+    if (!cb) throw new Error("Please pass in a callback fn().");
+
+    return (root) => {
+      if (root === null) return root;
+      const queue = [];
+      const result = [];
+      if (root) queue.push(root);
+      while (queue.length) {
+        const node = queue.shift();
+        result.push(cb(node.data));
+
+        if (node.left) queue.push(node.left);
+        if (node.right) queue.push(node.right);
+      }
+      return result;
+    };
+  }
+
+  inOrder(cb) {
+    if (!cb) throw new Error("Please pass in a callback fn().");
+    return (root) => {
+      const result = [];
+
+      function recurse(r) {
+        if (r === null) return r;
+        if (r.left) recurse(r.left);
+        result.push(cb(r.data));
+        if (r.right) recurse(r.right);
+      }
+
+      recurse(root);
+      return result;
+    };
+  }
 }
