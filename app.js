@@ -42,14 +42,17 @@ tree.root = tree.buildTree(tree.arr);
 // console.log("\n");
 
 // preOrder Traversal
-const postTraversePrt = tree.postOrder(justPrint);
-const postTraverseDou = tree.postOrder(doubled);
-const postTraversePow = tree.postOrder(powTwo);
+// const postTraversePrt = tree.postOrder(justPrint);
+// const postTraverseDou = tree.postOrder(doubled);
+// const postTraversePow = tree.postOrder(powTwo);
 
-console.log(postTraversePrt(tree.root).join("->"));
-console.log("\n");
-console.log(postTraverseDou(tree.root).join("->"));
-console.log("\n");
-console.log(postTraversePow(tree.root).join("->"));
-console.log("\n");
+// console.log(postTraversePrt(tree.root).join("->"));
+// console.log("\n");
+// console.log(postTraverseDou(tree.root).join("->"));
+// console.log("\n");
+// console.log(postTraversePow(tree.root).join("->"));
+// console.log("\n");
+tree.insert(59);
+tree.insert(69);
+console.log(tree.height(tree.root));
 prettyPrint(tree.root);

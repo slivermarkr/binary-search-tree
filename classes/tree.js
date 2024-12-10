@@ -138,4 +138,15 @@ export default class Tree {
       return result;
     };
   }
+
+  height(root) {
+    if (root === null) return -1;
+    function recurse(r) {
+      if (r === null) return -1;
+      let leftLen = recurse(r.left);
+      let rightLen = recurse(r.right);
+      return 1 + Math.max(leftLen, rightLen);
+    }
+    return recurse(root);
+  }
 }
