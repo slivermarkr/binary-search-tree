@@ -1,8 +1,8 @@
-import sortArray from "./removeDuplicate.js";
-export default function () {
+import sortArray from "./sortArray.js";
+export default function getArray(num = 100) {
   const array = [];
 
-  for (let i = 0; i <= 100; i++) {
+  for (let i = 0; i <= num; i++) {
     const random = Math.floor(Math.random() * 100);
     array.push(random);
   }
