@@ -4,11 +4,9 @@ project link: https://www.theodinproject.com/lessons/javascript-binary-search-tr
 
 ## test #1: Create a binary search tree from an array of random numbers < 100. You can create a function that returns an array of random numbers every time you call it if you wish.
 
-![Alt text](/screenshots/random-to-bst-isbalanced.jpg "random-to-bst")
-
 ## test #2: Confirm that the tree is balanced by calling isBalanced.
 
-![Alt text](/screenshots/call-isbalanced.jpg)
+![Alt text](/screenshots/random-to-bst-isbalanced.jpg "random-to-bst")
 
 ## test #3: Print out all elements in level, pre, post, and in order..
 
