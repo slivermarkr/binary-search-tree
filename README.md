@@ -13,22 +13,22 @@ tree.buildTree()
 
 ### levelOrder traversal
 
-tree.levelOrder(tree.root);
+let order = tree.levelOrder(callback)(tree.root).join("->")
 ![Alt text](/screenshots/BFS.jpg)
 
 ### inorder traversal: (left, root, right)
 
-tree.inOrder(tree.root);
+let inorder = tree.inOrder(callback)(tree.root).join("->")
 ![Alt text](/screenshots/inorder-traversal.jpg)
 
 ### preorder traversal: (root, left, right)
 
-tree.preOrder(tree.root);
+let preorder = tree.preOrder(callback)(tree.root).join("->")
 ![Alt text](/screenshots/preorder-traversal.jpg)
 
 ### postorder traversal: (left, right, root)
 
-tree.postOrder(tree.root);
+let postOrder = tree.postOrder(callback)(tree.root).join("->")
 ![Alt text](/screenshots/postorder-traversal.jpg)
 
 ## test #4: Unbalance the tree by adding several numbers > 100.

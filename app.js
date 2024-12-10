@@ -9,7 +9,8 @@ const tree = new Tree(arr); //convert sorted array to BST.
 
 tree.root = tree.buildTree();
 prettyPrint(tree.root);
-
+const level = tree.levelOrder(justPrint)(tree.root).join("->");
+console.log(level);
 // Breadth First Search or levelOrder
 // const cbJustPrint = tree.levelOrder(justPrint);
 // const cbDoubled = tree.levelOrder(doubled);
