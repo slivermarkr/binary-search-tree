@@ -158,15 +158,14 @@ export default class Tree {
       if (r === null) return;
       if (r.data === node.data) return count;
       if (r.data < node.data) {
-        recurse(node, r.right);
+        return 1 + recurse(node, r.right);
       }
       if (r.data > node.data) {
-        recurse(node, r.left);
+        return 1 + recurse(node, r.left);
       }
-      return count++;
     }
 
-    recurse(node, root);
+    count = recurse(node, root);
     return count;
   }
 
@@ -180,14 +179,7 @@ export default class Tree {
   }
 
   rebalance(root = this.getRoot()) {
-    const newArray = [];
-    function recurse(r) {
-      if (r === null) return r;
-      if (r.left) recurse(r.left);
-      newArray.push(r.data);
-      if (r.right) recurse(r.right);
-    }
-    recurse(root);
+    const newArray = this.inOrder((data) => data)(root);
     this.root = this.buildTree(newArray);
   }
 }

@@ -5,27 +5,19 @@ import { justPrint, powTwo, doubled } from "./components/callbacks.js";
 const sample = [1, 3, 5, 8, 12, 16, 23, 47];
 
 const arr = randomSortedArray(69); //creates a sortedarray
-const tree = new Tree(arr); //convert sorted array to BST.
+const tree = new Tree(sample); //convert sorted array to BST.
 
 tree.root = tree.buildTree();
+tree.insert(120);
+tree.insert(121);
+tree.insert(122);
+tree.insert(123);
 prettyPrint(tree.root);
-const level = tree.levelOrder(justPrint)(tree.root).join("->");
-console.log(level);
-// Breadth First Search or levelOrder
-// const cbJustPrint = tree.levelOrder(justPrint);
-// const cbDoubled = tree.levelOrder(doubled);
-// const cbPowTwo = tree.levelOrder(powTwo);
-// prettyPrint(tree.root);
-// console.log("\n");
-// console.log("callback: (x) => x");
-// console.log(cbJustPrint(tree.root).join("->"));
-// console.log("\n");
-// console.log("callback: (x) => x * 2");
-// console.log(cbDoubled(tree.root).join("->"));
-// console.log("\n");
-// console.log("callback: (x) => x * x");
-// console.log(cbPowTwo(tree.root).join("->"));
-// console.log("\n");
+tree.rebalance();
+prettyPrint(tree.root);
+// TESTING:
+// const level = tree.levelOrder(justPrint)(tree.root).join("->");
+// console.log(level);
 
 // Depth First Search
 // Inorder Traversal
